@@ -110,3 +110,6 @@ venv.bak/
 # Output folder Ignore
 
 output/
+
+# py~
+*.py~
