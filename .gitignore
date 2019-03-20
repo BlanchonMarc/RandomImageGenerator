@@ -106,3 +106,7 @@ venv.bak/
 # DS STORE
 
 .DS_Store
+
+# Output folder Ignore
+
+output/
