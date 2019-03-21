@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from skimage.draw import random_shapes
 import noise
 import random
+from math import *
 
 
 def generateRandShapes(min_s, max_s, min_size, overlap, sizes=(1000, 1000)):
@@ -13,6 +14,20 @@ def generateRandShapes(min_s, max_s, min_size, overlap, sizes=(1000, 1000)):
 
 
 def GeneratePerlin(scale=100, octaves=6, persistence=0.5, lacunarity=2.0):
+
+    scale = int(random.uniform(40, 140))
+    octaves = int(random.uniform(1, 25))
+    persistence = random.uniform(0, 1.5)
+    lacunarity = random.uniform(0, 2.0)
+
+    verbose = False
+
+    if verbose:
+        print(scale)
+        print(octaves)
+        print(persistence)
+        print(lacunarity)
+
     shape = (1000, 1000)
     seed = np.random.randint(0, 100)
 
@@ -29,21 +44,21 @@ def GeneratePerlin(scale=100, octaves=6, persistence=0.5, lacunarity=2.0):
                                         base=seed)
     color_world = np.zeros(world.shape+(3,))
 
-    color1 = [random.randint(0, 256),
-              random.randint(0, 256),
-              random.randint(0, 256)]
-    color2 = [random.randint(0, 256),
-              random.randint(0, 256),
-              random.randint(0, 256)]
-    color3 = [random.randint(0, 256),
-              random.randint(0, 256),
-              random.randint(0, 256)]
-    color4 = [random.randint(0, 256),
-              random.randint(0, 256),
-              random.randint(0, 256)]
-    color5 = [random.randint(0, 256),
-              random.randint(0, 256),
-              random.randint(0, 256)]
+    color1 = [int(random.uniform(0, 255)),
+              int(random.uniform(0, 255)),
+              int(random.uniform(0, 255))]
+    color2 = [int(random.uniform(0, 255)),
+              int(random.uniform(0, 255)),
+              int(random.uniform(0, 255))]
+    color3 = [int(random.uniform(0, 255)),
+              int(random.uniform(0, 255)),
+              int(random.uniform(0, 255))]
+    color4 = [int(random.uniform(0, 255)),
+              int(random.uniform(0, 255)),
+              int(random.uniform(0, 255))]
+    color5 = [int(random.uniform(0, 255)),
+              int(random.uniform(0, 255)),
+              int(random.uniform(0, 255))]
     for i in range(shape[0]):
         for j in range(shape[1]):
             if world[i][j] < -0.05:
